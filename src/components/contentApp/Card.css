@@ -1,0 +1,9 @@
+.card-container{
+    padding: 10px;
+    margin-inline: 100px;
+}
+
+.card-text {
+    background-color: #ddd;
+    margin-inline: 100px;
+}
