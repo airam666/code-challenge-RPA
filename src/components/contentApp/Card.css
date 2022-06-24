@@ -1,9 +1,14 @@
-.card-container{
-    padding: 10px;
-    margin-inline: 100px;
+.card-text {
+  margin-inline: 10px;
 }
 
-.card-text {
-    background-color: #ddd;
-    margin-inline: 100px;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 70%;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-inline: 15%;
+  padding: 20px;
 }

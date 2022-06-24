@@ -2,7 +2,7 @@ const cardListPerUser = (userData) => {
         return userData.map((data, key) => {
             return (
               <div
-                className="card-container"
+                className="card"
                 key={key}
               >
                 <div className="card-text">
@@ -10,7 +10,6 @@ const cardListPerUser = (userData) => {
                   <p>{data.body}</p>
                   <p>{data.userId}</p>
                 </div>
-                <hr />
               </div>
             );
           });

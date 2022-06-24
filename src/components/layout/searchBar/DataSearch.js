@@ -6,7 +6,6 @@ import "./DataSearch.css";
 const DataSearch = () => {
   return (
     <div className="topnav">
-      <a href="#home">Volver</a>
       <SearchInput />
     </div>
   );

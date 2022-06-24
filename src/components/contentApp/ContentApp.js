@@ -6,13 +6,18 @@ function ContentApp() {
   const [userData, setUserData] = useState([]);
   const [userNumber, setUserNumber] = useState(1);
 
-  useEffect(() => {
+  useEffect(()=>{
     fetchPost(userNumber);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+  useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     window.addEventListener('scroll', function() {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-           console.log("you're at the bottom of the page ", userNumber);
-           //setUserNumber(userNumber+1)
+           //console.log("you're at the bottom of the page ", userNumber);
+           setUserNumber(userNumber+1)
+           fetchPost(userNumber);
            // Show loading spinner and make fetch request to api
         }
      });
