@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import "./Card.css";
 import cardListPerUser from "./CardListPerUser";
 
@@ -21,7 +21,7 @@ function ContentApp() {
     let searchResult = userData.filter((element) => {
       if (element.title.toString().toLowerCase().includes(term.toLowerCase())) {
         return element;
-      }else if(term===""){
+      } else if (!term) {
         return userData;
       }
     });
@@ -33,14 +33,14 @@ function ContentApp() {
   };
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     window.addEventListener("scroll", function () {
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        //console.log("you're at the bottom of the page ", userNumber);
-        setUserNumber(userNumber + 1);
-        fetchPost(userNumber);
+        if(userNumber<=10){
+          setUserNumber(userNumber + 1);
+          fetchPost(userNumber);
+        }
       }
-    });
+    }); 
   }, [userNumber]);
 
   const fetchPost = async (user) => {
