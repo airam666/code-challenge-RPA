@@ -6,21 +6,41 @@ function ContentApp() {
   const [userData, setUserData] = useState([]);
   const [userNumber, setUserNumber] = useState(1);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchPost(userNumber);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    setUserData(results);
+  }, [results]);
+
+  const filterTitles = (term) => {
+    let searchResult = userData.filter((element) => {
+      if (element.title.toString().toLowerCase().includes(term.toLowerCase())) {
+        return element;
+      }else if(term===""){
+        return userData;
+      }
+    });
+    setResults(searchResult);
+  };
+
+  const handleChange = (e) => {
+    filterTitles(e.target.value);
+  };
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    window.addEventListener('scroll', function() {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-           //console.log("you're at the bottom of the page ", userNumber);
-           setUserNumber(userNumber+1)
-           fetchPost(userNumber);
-           // Show loading spinner and make fetch request to api
-        }
-     });
+    window.addEventListener("scroll", function () {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        //console.log("you're at the bottom of the page ", userNumber);
+        setUserNumber(userNumber + 1);
+        fetchPost(userNumber);
+      }
+    });
   }, [userNumber]);
 
   const fetchPost = async (user) => {
@@ -31,7 +51,19 @@ function ContentApp() {
     localStorage.setItem([data.userId], data);
     setUserData(data);
   };
-
-  return cardListPerUser(userData);
+  return (
+    <>
+      <div className="topnav">
+        <div className="textTitle">Minuto a Minuto</div>
+        <input
+          type="text"
+          className="search"
+          placeholder="Search.."
+          onChange={handleChange}
+        />
+      </div>
+      {cardListPerUser(userData)}
+    </>
+  );
 }
 export default ContentApp;

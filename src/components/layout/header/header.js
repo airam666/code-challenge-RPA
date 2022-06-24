@@ -1,13 +1,9 @@
 import React from "react";
-import DataSearch from "../searchBar/DataSearch";
 
-class Header extends React.Component {
-  render() {
+const Header = () =>{
     return (
       <div>
-        <DataSearch />
       </div>
     );
-  }
 }
 export default Header;

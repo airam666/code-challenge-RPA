@@ -12,3 +12,48 @@
   margin-inline: 15%;
   padding: 20px;
 }
+
+.textTitle{
+  float:left;
+  width: 18%;
+  min-width: 77px;
+  color: white;
+  font-size: x-large;
+  font-style: normal;
+  align-self: flex-end;
+  padding-top: 10px;
+ }
+
+.search {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #2C8189;
+  padding: 15px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
