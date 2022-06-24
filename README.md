@@ -4,7 +4,7 @@ This app was created for a code challenge of RPALatam
 
 ## Installation
 
-Use the npm package manager and type `npm start`
+Use the npm package manager and type `npm install`
 
 ## Usage
 
@@ -16,3 +16,11 @@ this app uses pure ReactJS and HTML+CSS
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Usage
+
+```javascript
+npm start
+
+```
+go to ``http://localhost:3000/``
