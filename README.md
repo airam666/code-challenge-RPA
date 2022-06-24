@@ -10,7 +10,7 @@ Use the npm package manager and type `npm start`
 
 consulting the API https://jsonplaceholder.typicode.com/users/ I show a timeline with all the post made by a single user, then after each scroll the app is updated
 
-## Libraies used
+## Libraries used
 
 this app uses pure ReactJS and HTML+CSS
 
